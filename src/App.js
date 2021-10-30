@@ -2,28 +2,29 @@ import logo from './logo.svg';
 import './App.css';
 
 
-function Header(){
+function Header(props){
+  console.log(props);
   return (
     <header>
-      <h1>Eve's kitchen</h1>
+      <h1>{props.Hname}'s kitchen</h1>
     </header>
   )
 }
 
 
-function Main(){
+function Main(Props){
   return (
     <section>
-      <p>We serve the most delicious food around</p>
+      <p>We serve the most {Props.adjective} food around</p>
     </section>
   )
 }
 
 
-function Footer(){
+function Footer(Props){
   return (
     <footer>
-      <p> It's true </p>
+      <p>Copyright {Props.year} </p>
     </footer>
   )
 }
@@ -34,9 +35,9 @@ function Footer(){
 function App() {
   return (
     <div className="App">
-    <Header></Header>
-    <Main></Main>
-    <Footer></Footer>
+    <Header Hname ="PCR"/>
+    <Main adjective = "Amazing"/>
+    <Footer year = {new Date().getFullYear()}/>
 
     </div>
   );
