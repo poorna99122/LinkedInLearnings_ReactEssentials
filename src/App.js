@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Restaurant from "./Restaurant.jpg"
 
 function Header(props) {
   console.log(props);
@@ -14,6 +15,8 @@ function Main(props) {
   return (
     <section>
       <p>We serve the most {props.adjective} food around</p>
+      <img src={Restaurant} alt="Restaurant" height={200} />
+      {/* <img src="https://github.com/poorna99122.png" alt="Restaurant" height={200} /> */}
       <ul style={{ textAlign: "left" }}>
         {props.dishes.map((dish) => (
           <li key={dish.id}>{dish.title}</li>
