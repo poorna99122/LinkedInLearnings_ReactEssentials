@@ -22,14 +22,16 @@ ReactDOM.render(
   // ),
 
 //Instead of writing like as above we can write by Using JSX like as below
-
-
-
-
-
-
-
-
+ 
+<ul>
+  <li>Monday</li>
+  <li>Tuesday</li>
+  <li>Wednesday</li>
+  <li>Thursday</li>
+  <li>Friday</li>
+  <li>Satruday</li>
+  <li>Sunday</li>
+</ul>,
 
   document.getElementById("root")
 );
