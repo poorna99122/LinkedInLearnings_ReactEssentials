@@ -1,0 +1,3 @@
+JSX :-
+------
+JSX or Javascript as XML is a language extention that allows you to write tags directly in Javascript
