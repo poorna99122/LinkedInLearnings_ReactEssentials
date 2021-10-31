@@ -19,7 +19,7 @@ ReactDOM.render(
 //   <AppTwo />
 // </>,
 
-<App/>,
+<App authorized={true}/>,
  
   document.getElementById("root")
 );
