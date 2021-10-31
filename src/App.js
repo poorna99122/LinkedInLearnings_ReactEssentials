@@ -2,19 +2,18 @@ import logo from "./logo.svg";
 import "./App.css";
 import Restaurant from "./Restaurant.jpg";
 import React, { useState, useEffect, useReducer } from "react";
-import {Routes, Route} from "react-router-dom"
+import { Routes, Route } from "react-router-dom";
 
-import { Home, About, Events, Contact, Whoops404 } from "./pages"
-
-
-
-
-
-
-
-
-
-
+import {
+  Home,
+  About,
+  Events,
+  Contact,
+  Whoops404,
+  Services,
+  CompanyHistory,
+  Location,
+} from "./pages";
 
 // function Header(props) {
 //   console.log(props);
@@ -113,10 +112,6 @@ import { Home, About, Events, Contact, Whoops404 } from "./pages"
 //     false
 //     );
 
-
-
-
-
 //   return (
 //     <>
 //       <input
@@ -125,27 +120,20 @@ import { Home, About, Events, Contact, Whoops404 } from "./pages"
 //         onChange={toggle }
 //       />
 
-      
 //       <p>{checked ? "checked":"not checked"}</p>
 //     </>
 //   );
 // }
-
-
-
 
 // function App( {login} ) {
 //   const [data, setData] = useState(null);
 //   const [loading, setloading] = useState(false);
 //   const [error, seterror] = useState(null);
 
-
-
 //   useEffect(() => {
 
 //     if(!login) return;
 //     setloading(true);
-
 
 //     fetch(`https://api.github.com/users/${login}`)
 //         .then((response) => response.json())
@@ -155,10 +143,9 @@ import { Home, About, Events, Contact, Whoops404 } from "./pages"
 //   }, [login] );
 
 //   if(loading) return <h1>Loading ....</h1>
-//   if(error) 
+//   if(error)
 //     return <pre>{JSON.stringify(error, null, 2)}</pre>;
 
-  
 //   if(!data) return null;
 
 //     return (
@@ -168,23 +155,12 @@ import { Home, About, Events, Contact, Whoops404 } from "./pages"
 //       <img alt={data.login} src={data.avatar_url}></img>
 //       </div>
 //     );
-  
 
 //   return <div>No User available </div>
 
-
 // }
 
-
-
-
 // function App() {
-
-
-
-
- 
-  
 
 //     return (
 //     <div>
@@ -192,48 +168,27 @@ import { Home, About, Events, Contact, Whoops404 } from "./pages"
 
 //       </div>
 //     );
-  
-
-
 
 // }
 
-
-
-
 function App() {
-
-
-
-
- 
-  
-
   return (
-  <div>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/events" element={<Events />} />
-      <Route path="*" element={<Whoops404 />} />
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />}>
+        <Route path="services" element={<Services />} />
+        <Route path="history" element={<CompanyHistory />} />
+        <Route path="location" element={<Location />} />
 
 
-    </Routes>
-
+        </Route>
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="*" element={<Whoops404 />} />
+      </Routes>
     </div>
   );
-
-
-
-
 }
-
-
-
-
-
-
-
 
 export default App;
