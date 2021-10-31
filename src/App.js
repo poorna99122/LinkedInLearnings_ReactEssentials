@@ -2,6 +2,19 @@ import logo from "./logo.svg";
 import "./App.css";
 import Restaurant from "./Restaurant.jpg";
 import React, { useState, useEffect, useReducer } from "react";
+import {Routes, Route} from "react-router-dom"
+
+import { Home, About, Events, Contact } from "./pages"
+
+
+
+
+
+
+
+
+
+
 
 // function Header(props) {
 //   console.log(props);
@@ -165,6 +178,29 @@ import React, { useState, useEffect, useReducer } from "react";
 
 
 
+// function App() {
+
+
+
+
+ 
+  
+
+//     return (
+//     <div>
+//       <h1>Hello React Testing Library</h1>
+
+//       </div>
+//     );
+  
+
+
+
+// }
+
+
+
+
 function App() {
 
 
@@ -173,13 +209,19 @@ function App() {
  
   
 
-    return (
-    <div>
-      <h1>Hello React Testing Library</h1>
+  return (
+  <div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/events" element={<Events />} />
 
-      </div>
-    );
-  
+    </Routes>
+
+    </div>
+  );
+
 
 
 
