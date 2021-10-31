@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Restaurant from "./Restaurant.jpg";
-import React,{ useState } from "react";
+import React,{ useState, useEffect } from "react";
 
 // function Header(props) {
 //   console.log(props);
@@ -72,11 +72,23 @@ import React,{ useState } from "react";
 
 function App() {
   const [emotion ,setEmotion] = useState("happy");
-  console.log(emotion)
+  const [secondary ,setSecondary] = useState("tired");
+
+  useEffect(()=>{
+    console.log(`It's ${emotion} around here!`);
+  }, [emotion] )
+
+  useEffect(()=>{
+    console.log(`It's ${secondary} around here!`);
+  }, )
+
+
 
     return(
       <>
-      <h1>Current state is  {emotion} </h1>
+      <h1>Current state is  {emotion} and {secondary} </h1>
+      <button onClick={()=> setSecondary("crabby")}>crabby</button>
+
       <button onClick={()=> setEmotion("happy")}>happy</button>
       <button onClick={()=> setEmotion("frustrated")}>Frustrate</button>
       <button onClick={()=> setEmotion("enthusiastic")}>Enthuise</button>
