@@ -23,7 +23,7 @@ ReactDOM.render(
   //   <AppTwo />
   // </>,
 
-  <App />,
+  <App login="poorna99122" />,
 
   document.getElementById("root")
 );
