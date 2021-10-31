@@ -127,13 +127,20 @@ function App( {login} ) {
   useEffect(() => {
     fetch(`https://api.github.com/users/${login}`)
         .then((response) => response.json())
-        .then(setData)
+        .then(setData);
   }, [] );
 
+  // {JSON.stringify(data)} 
 
 
   if(data) {
-    return <div>{JSON.stringify(data)} </div>
+    return (
+    <div>
+      <h1>{data.login}</h1>
+      <h1>{data.id}</h1>
+      <img alt={data.login} src={data.avatar_url}></img>
+      </div>
+    );
   }
 
   return <div>No User available </div>
