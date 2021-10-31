@@ -121,46 +121,70 @@ import React, { useState, useEffect, useReducer } from "react";
 
 
 
-function App( {login} ) {
-  const [data, setData] = useState(null);
-  const [loading, setloading] = useState(false);
-  const [error, seterror] = useState(null);
+// function App( {login} ) {
+//   const [data, setData] = useState(null);
+//   const [loading, setloading] = useState(false);
+//   const [error, seterror] = useState(null);
 
 
 
-  useEffect(() => {
+//   useEffect(() => {
 
-    if(!login) return;
-    setloading(true);
+//     if(!login) return;
+//     setloading(true);
 
 
-    fetch(`https://api.github.com/users/${login}`)
-        .then((response) => response.json())
-        .then(setData)
-        .then(() => setloading(false))
-        .catch(seterror)
-  }, [login] );
+//     fetch(`https://api.github.com/users/${login}`)
+//         .then((response) => response.json())
+//         .then(setData)
+//         .then(() => setloading(false))
+//         .catch(seterror)
+//   }, [login] );
 
-  if(loading) return <h1>Loading ....</h1>
-  if(error) 
-    return <pre>{JSON.stringify(error, null, 2)}</pre>;
+//   if(loading) return <h1>Loading ....</h1>
+//   if(error) 
+//     return <pre>{JSON.stringify(error, null, 2)}</pre>;
 
   
-  if(!data) return null;
+//   if(!data) return null;
+
+//     return (
+//     <div>
+//       <h1>{data.login}</h1>
+//       <h1>{data.id}</h1>
+//       <img alt={data.login} src={data.avatar_url}></img>
+//       </div>
+//     );
+  
+
+//   return <div>No User available </div>
+
+
+// }
+
+
+
+
+function App() {
+
+
+
+
+ 
+  
 
     return (
     <div>
-      <h1>{data.login}</h1>
-      <h1>{data.id}</h1>
-      <img alt={data.login} src={data.avatar_url}></img>
+      <h1>Hello React Testing Library</h1>
+
       </div>
     );
   
 
-  return <div>No User available </div>
 
 
 }
+
 
 
 
