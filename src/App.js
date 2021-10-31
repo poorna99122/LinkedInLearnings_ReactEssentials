@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Restaurant from "./Restaurant.jpg";
+import React,{ useState } from "react";
 
 // function Header(props) {
 //   console.log(props);
@@ -49,24 +50,45 @@ import Restaurant from "./Restaurant.jpg";
 //   );
 // }
 
-function SecretComponent() {
-  return <h1> Super secret information for authorized users only </h1>;
-}
+// function SecretComponent() {
+//   return <h1> Super secret information for authorized users only </h1>;
+// }
 
-function RegularComponent() {
-  return <h1>Everyone can see this component.</h1>;
-}
+// function RegularComponent() {
+//   return <h1>Everyone can see this component.</h1>;
+// }
 
-function App(props) {
+// function App(props) {
+
+//     return(
+//       <>
+//     {props.authorized ? <SecretComponent/> : <RegularComponent /> }
+//       </>
+//     )
+ 
+     
+//   }
+
+
+function App() {
+  const [emotion ,setEmotion] = useState("happy");
+  console.log(emotion)
 
     return(
       <>
-    {props.authorized ? <SecretComponent/> : <RegularComponent /> }
+      <h1>Current state is  {emotion} </h1>
+      <button onClick={()=> setEmotion("happy")}>happy</button>
+      <button onClick={()=> setEmotion("frustrated")}>Frustrate</button>
+      <button onClick={()=> setEmotion("enthusiastic")}>Enthuise</button>
+
       </>
     )
  
      
   }
+
+
+
 
 
 export default App;

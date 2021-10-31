@@ -5,8 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 
-const  [mostImportantItem, second , third] = ["boots","tent","headlamp"];
-console.log(mostImportantItem, second , third);
+// const  [mostImportantItem, second , third] = ["boots","tent","headlamp"];
+// console.log(mostImportantItem, second , third);
 
 // function AppTwo() {
 //   return <h1> This is the second App </h1>;
@@ -23,7 +23,7 @@ ReactDOM.render(
   //   <AppTwo />
   // </>,
 
-  <App authorized={true} />,
+  <App />,
 
   document.getElementById("root")
 );
