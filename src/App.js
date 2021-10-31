@@ -123,17 +123,31 @@ import React, { useState, useEffect, useReducer } from "react";
 
 function App( {login} ) {
   const [data, setData] = useState(null);
+  const [loading, setloading] = useState(false);
+  const [error, seterror] = useState(null);
+
+
 
   useEffect(() => {
+
+    if(!login) return;
+    setloading(true);
+
+
     fetch(`https://api.github.com/users/${login}`)
         .then((response) => response.json())
-        .then(setData);
-  }, [] );
+        .then(setData)
+        .then(() => setloading(false))
+        .catch(seterror)
+  }, [login] );
 
-  // {JSON.stringify(data)} 
+  if(loading) return <h1>Loading ....</h1>
+  if(error) 
+    return <pre>{JSON.stringify(error, null, 2)}</pre>;
 
+  
+  if(!data) return null;
 
-  if(data) {
     return (
     <div>
       <h1>{data.login}</h1>
@@ -141,7 +155,7 @@ function App( {login} ) {
       <img alt={data.login} src={data.avatar_url}></img>
       </div>
     );
-  }
+  
 
   return <div>No User available </div>
 
