@@ -4,9 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-function AppTwo() {
-  return <h1> This is the second App </h1>;
-}
+
+const  [mostImportantItem, second , third] = ["boots","tent","headlamp"];
+console.log(mostImportantItem, second , third);
+
+// function AppTwo() {
+//   return <h1> This is the second App </h1>;
+// }
 
 ReactDOM.render(
   // <React.Fragment>
@@ -14,12 +18,12 @@ ReactDOM.render(
   //   <AppTwo />
   // </React.Fragment>,
 
-//   <>
-//   <App />
-//   <AppTwo />
-// </>,
+  //   <>
+  //   <App />
+  //   <AppTwo />
+  // </>,
 
-<App authorized={true}/>,
- 
+  <App authorized={true} />,
+
   document.getElementById("root")
 );
